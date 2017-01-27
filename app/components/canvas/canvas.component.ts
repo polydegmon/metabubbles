@@ -8,30 +8,30 @@ import { Component } from '@angular/core';
 })
 
 export class CanvasComponent {
-  
-  height: number;
-  width: number;
-  
+
+  // private height: number;
+  // private width: number;
+    
   constructor() {    
     console.info("CanvasComponent Constructor.......");      
-    
-    this.height = this.getCanvasHeight();
-    this.width = this.getCanvasWidth();
+  
+    // this.height = this.getCanvasHeight();
+    // this.width = this.getCanvasWidth();
 
-    console.log(`canvas height - ${this.height} : canvas width - ${this.width}`);    
+    // console.log(`canvas height - ${this.height} : canvas width - ${this.width}`);    
   }
 
-  getCanvasHeight(): number {
-    // At some point this will be able to get the size of the container
-    return 500;
-  }
+  // private getCanvasHeight(): number {
+  //   // At some point this will be able to get the size of the container
+  //   return 500;    
+  // }
 
-  getCanvasWidth(): number {
-    // At some point this will be able to get the size of the container
-    return 900;    
-  }
+  // private getCanvasWidth(): number {
+  //   // At some point this will be able to get the size of the container
+  //   return 900;        
+  // }
 
-  getViewBox(): string {        
-    return `0 0 ${this.width} ${this.height}`;
-  }
+  // getViewBox(): string {        
+  //   return `0 0 ${this.width} ${this.height}`;
+  // }
 }
