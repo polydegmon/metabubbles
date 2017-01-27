@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-// // Serivce Import
-// import { CircleService } from '../../services/circle.service';
-
 // Model Import
 import { Circle } from '../../models/circle';
 
@@ -12,18 +9,14 @@ import { Circle } from '../../models/circle';
     templateUrl: 'circle.component.html',
     styleUrls: ['circle.component.css'],
     providers: [Circle],     
-    inputs: ['circle'],
+    inputs: ['circle']
 })
 
 export class CircleComponent implements OnInit {
-
-    // circle: Circle;
-
-    // constructor(circle: Circle) {        
-    //     console.info("CircleComponent Constructor.......");    
-
-    //     this.circle = circle;        
-    // }
+    
+    constructor() {        
+        console.info("CircleComponent Constructor.......");    
+    }
 
     ngOnInit() {        
         console.info("CircleComponent ngOnInit........");
