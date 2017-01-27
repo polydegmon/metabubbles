@@ -1,5 +1,1 @@
-<svg viewBox="0 0 900 500" preserveAspectRatio="xMidYMid meet">
-    <svg:g>                
-        <circle *ngFor="let circle of circles" [attr.cx]="circle.cx" [attr.cy]="circle.cy" [attr.r]="circle.radius"></circle>
-    </svg:g>
-</svg>
+<svg:circle [attr.cx]="circle.x" [attr.cy]="circle.y" [attr.r]="circle.radius" />

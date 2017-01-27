@@ -1,37 +1,48 @@
+// Component Import
 import { Component } from '@angular/core';
+
+// Serivce Import
+import { CircleService } from '../../services/circle.service';
+
+// Model Import
+import { Circle } from '../../models/circle';
 
 @Component({
   moduleId: module.id,
   selector: 'mb-canvas',
   templateUrl: 'canvas.component.html',
-  styleUrls: ['canvas.component.css']
+  styleUrls: ['canvas.component.css'],
+  providers: [Circle, CircleService]
 })
 
 export class CanvasComponent {
 
-  // private height: number;
-  // private width: number;
-    
-  constructor() {    
-    console.info("CanvasComponent Constructor.......");      
-  
-    // this.height = this.getCanvasHeight();
-    // this.width = this.getCanvasWidth();
+  circles: Circle[]
+  height: number;
+  width: number;
 
-    // console.log(`canvas height - ${this.height} : canvas width - ${this.width}`);    
+  constructor(private circleService: CircleService) {
+    console.info("CanvasComponent Constructor.......");
+
+    this.height = this.getCanvasHeight();
+    this.width = this.getCanvasWidth();
+
+    this.circles = circleService.getCircles(this.height, this.width, 10);
+
+    console.log(`canvas height - ${this.height} : canvas width - ${this.width}`);
   }
 
-  // private getCanvasHeight(): number {
-  //   // At some point this will be able to get the size of the container
-  //   return 500;    
-  // }
+  // At some point this will be able to get the size of the container
+  private getCanvasHeight(): number {
+    return 500;
+  }
 
-  // private getCanvasWidth(): number {
-  //   // At some point this will be able to get the size of the container
-  //   return 900;        
-  // }
+  // At some point this will be able to get the size of the container
+  private getCanvasWidth(): number {
+    return 900;
+  }
 
-  // getViewBox(): string {        
-  //   return `0 0 ${this.width} ${this.height}`;
-  // }
+  getViewBox() {
+    return `0 0 ${this.width.toString()} ${this.height.toString()}`;
+  }
 }

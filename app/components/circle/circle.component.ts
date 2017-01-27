@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-// Serivce Import
-import { CircleService } from '../../services/circle.service';
+// // Serivce Import
+// import { CircleService } from '../../services/circle.service';
 
 // Model Import
 import { Circle } from '../../models/circle';
@@ -11,18 +11,17 @@ import { Circle } from '../../models/circle';
     selector: 'mb-circle',
     templateUrl: 'circle.component.html',
     styleUrls: ['circle.component.css'],
-    providers: [Circle, CircleService]
+    providers: [Circle]    
 })
 
 export class CircleComponent implements OnInit {
 
-    circles: Circle[];
+    circle: Circle;
 
-    constructor(circle: Circle, private circleService: CircleService) {        
-        console.info("CircleComponent Constructor.......");  
+    constructor(circle: Circle) {        
+        console.info("CircleComponent Constructor.......");    
 
-        // The 900 and 500 here should come from the canvas component
-        this.circles = circleService.getCircles(500, 900, 10);        
+        this.circle = circle;        
     }
 
     ngOnInit() {        
