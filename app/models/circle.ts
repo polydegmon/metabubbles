@@ -4,6 +4,6 @@ export class Circle {
     radius: number;
 
     constructor() {
-        console.log("Circle Model Initialized");
+        console.info("Circle Model Initialized");
     }
 }

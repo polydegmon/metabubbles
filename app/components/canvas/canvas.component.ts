@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { CircleService } from '../../services/circle.service';
-import { Circle } from '../../models/circle';
 
 @Component({
   moduleId: module.id,
@@ -10,31 +8,30 @@ import { Circle } from '../../models/circle';
 })
 
 export class CanvasComponent {
-
-  // circles: Circle[];
   
-  // canvasHeight: number;
-  // canvasWidth: number;
+  height: number;
+  width: number;
+  
+  constructor() {    
+    console.info("CanvasComponent Constructor.......");      
+    
+    this.height = this.getCanvasHeight();
+    this.width = this.getCanvasWidth();
 
-  // constructor(private circleService: CircleService) {
-  //   this.canvasWidth = this.getCanvasWidth();
-  //   this.canvasHeight = this.getCanvasHeight();
+    console.log(`canvas height - ${this.height} : canvas width - ${this.width}`);    
+  }
 
-  //   this.circles = this.circleService.getCircles(this.canvasWidth, this.canvasHeight, 10);
-  // }
+  getCanvasHeight(): number {
+    // At some point this will be able to get the size of the container
+    return 500;
+  }
 
-  // getCanvasHeight(): number {
-  //   // At some point this will be able to get the size of the container
-  //   return 500;
-  // }
+  getCanvasWidth(): number {
+    // At some point this will be able to get the size of the container
+    return 900;    
+  }
 
-  // getCanvasWidth(): number {
-  //   // At some point this will be able to get the size of the container
-  //   return 900;    
-  // }
-
-  // getViewBox(): string {    
-  //   // fix the issue here before moving on to the circle issue
-  //   return "0 0 this.canvasWidth this.canvasHeight";
-  // }
+  getViewBox(): string {        
+    return `0 0 ${this.width} ${this.height}`;
+  }
 }

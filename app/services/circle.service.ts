@@ -13,10 +13,10 @@ export class CircleService {
     circles: Circle[];
 
     constructor() {
-        console.log("CircleService Initialized...");
+        console.info("CircleService Initialized...");
     }
 
-    getCircles(canvasWidth:number, canvasHeight:number, radiusModifier:number): Circle[] {
+    getCircles(canvasHeight:number, canvasWidth:number, radiusModifier:number): Circle[] {
         
         this.circles = [];
 

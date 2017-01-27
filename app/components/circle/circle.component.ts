@@ -12,25 +12,20 @@ import { Circle } from '../../models/circle';
     templateUrl: 'circle.component.html',
     styleUrls: ['circle.component.css'],
     providers: [Circle, CircleService]
-
-    //inputs: ['circle']
 })
 
 export class CircleComponent implements OnInit {
 
     circles: Circle[];
 
-    constructor(circle: Circle, private circleService: CircleService) {
-        console.log("CircleComponent Constructor.......");
-        this.getCircles(circleService);
-        console.log(circle);
+    constructor(circle: Circle, private circleService: CircleService) {        
+        console.info("CircleComponent Constructor.......");  
+
+        // The 900 and 500 here should come from the canvas component
+        this.circles = circleService.getCircles(500, 900, 10);        
     }
 
     ngOnInit() {        
-        console.log(this.circles);
-    }
-
-    getCircles(circleService: CircleService) {
-        this.circles = circleService.getCircles(900, 500, 10);            
+        console.info("CircleComponent ngOnInit........");
     }
 }
