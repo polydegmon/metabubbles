@@ -1,5 +1,5 @@
 <h1>Canvas</h1>
 
 <svg [attr.viewBox]="getViewBox()" preserveAspectRatio="xMidYMid meet">
-    <!--<mb-circle *ngFor="let circle of circles" [circle]="circle"></mb-circle>-->
+    <svg:g mb-circle *ngFor="let circle of circles" [circle]="circle"></svg:g>
 </svg>

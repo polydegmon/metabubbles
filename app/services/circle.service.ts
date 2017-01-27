@@ -16,15 +16,15 @@ export class CircleService {
         console.info("CircleService Initialized...");
     }
 
-    getCircles(canvasHeight:number, canvasWidth:number, radiusModifier:number): Circle[] {
+    getCircles(canvasHeight:number, canvasWidth:number, radiusModifier:number, generate: number): Circle[] {
         
         this.circles = [];
 
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < generate; i++) {
             this.circles.push({
                 cx: this.randInt(canvasWidth),
                 cy: this.randInt(canvasHeight),
-                radius: this.randInt(100) + radiusModifier
+                radius: this.randInt(generate) + radiusModifier
             });            
         }
 

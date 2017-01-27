@@ -27,7 +27,7 @@ export class CanvasComponent {
     this.height = this.getCanvasHeight();
     this.width = this.getCanvasWidth();
 
-    this.circles = circleService.getCircles(this.height, this.width, 10);
+    this.circles = circleService.getCircles(this.height, this.width, 10, 10);
 
     console.log(`canvas height - ${this.height} : canvas width - ${this.width}`);
   }

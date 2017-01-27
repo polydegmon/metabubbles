@@ -8,21 +8,22 @@ import { Circle } from '../../models/circle';
 
 @Component({
     moduleId: module.id,
-    selector: 'mb-circle',
+    selector: '[mb-circle]',
     templateUrl: 'circle.component.html',
     styleUrls: ['circle.component.css'],
-    providers: [Circle]    
+    providers: [Circle],     
+    inputs: ['circle'],
 })
 
 export class CircleComponent implements OnInit {
 
-    circle: Circle;
+    // circle: Circle;
 
-    constructor(circle: Circle) {        
-        console.info("CircleComponent Constructor.......");    
+    // constructor(circle: Circle) {        
+    //     console.info("CircleComponent Constructor.......");    
 
-        this.circle = circle;        
-    }
+    //     this.circle = circle;        
+    // }
 
     ngOnInit() {        
         console.info("CircleComponent ngOnInit........");
