@@ -16,11 +16,22 @@ export class CircleService {
         console.log("CircleService Initialized...");
     }
 
-    getCircles(): Circle[] {
-        return this.circles = [            
-            { x: 50, y: 50, radius: 10 },
-            { x: 75, y: 75, radius: 20 },
-            { x: 115, y: 115, radius: 30 }
-        ];
+    getCircles(canvasWidth:number, canvasHeight:number, radiusModifier:number): Circle[] {
+        
+        this.circles = [];
+
+        for (let i = 0; i < 100; i++) {
+            this.circles.push({
+                cx: this.randInt(canvasWidth),
+                cy: this.randInt(canvasHeight),
+                radius: this.randInt(100) + radiusModifier
+            });            
+        }
+
+        return this.circles;
+    }
+
+    private randInt(max: number): number {
+        return Math.floor(Math.random() * max);
     }
 }

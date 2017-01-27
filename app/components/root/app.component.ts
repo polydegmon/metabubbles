@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 
-import { CircleService } from '../../services/circle.service';
-
 @Component({
   moduleId: module.id,
   selector: 'metabubblesApp',
-  templateUrl: 'app.component.html',
-  providers: [CircleService]
+  templateUrl: 'app.component.html'  
 })
 
 export class AppComponent {
